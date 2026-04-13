@@ -22,6 +22,22 @@
           }
         },
         {
+          "target_version": "Rev E.12",
+          "release_date": "2026-04-13",
+          "app_file": {
+            "filename": "EA-PCA-018-10-2_APP_revE.12.zip",
+            "url": "https://github.com/Southco/firmware-manifest/releases/download/EA-PCA-018-10-2-revE.12/EA-PCA-018-10-2_APP_revE.12.zip",
+            "sha256": "4694b06d7305de05f895df8a7d26eb14c7a036cd2b3bd7c7f90b9c455035ef09",
+            "size_bytes": 95183
+          },
+          "dfu_file": {
+            "filename": "EA-PCA-018-10-2_DFU_revAtoC.2.zip",
+            "url": "https://github.com/Southco/firmware-manifest/releases/download/EA-PCA-018-10-2-revE.12/EA-PCA-018-10-2_DFU_revAtoC.2.zip",
+            "sha256": "2228c641f67814e0b749d1140d2ff754d0228847ad106f623ea1445f8f3b32be",
+            "size_bytes": 175163
+          }
+        },
+        {
           "target_version": "Rev E.9",
           "release_date": "2025-05-17",
           "app_file": {

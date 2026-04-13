@@ -21,16 +21,105 @@ Each release is tagged with the convention `<model>-<version>` (e.g., `EA-PCA-01
 
 ## Adding a New Firmware Version
 
-1. Create a GitHub Release with the tag `<model>-<version>`
-2. Upload the `.zip` firmware files as release assets
-3. Update the device's manifest JSON with the new entry (including `sha256` and `size_bytes`)
-4. Commit and push
+### Step 1: Prepare your firmware files
+
+Place your `.zip` firmware files in a local folder. You will need:
+- The **APP** firmware zip (required)
+- The **DFU** firmware zip (optional, only if a bootloader/radio update is needed)
+
+### Step 2: Compute sha256 and file size
+
+Run these commands for each zip file to get the values you'll need for the manifest:
+
+```bash
+# On macOS
+shasum -a 256 <filename>.zip
+wc -c < <filename>.zip
+
+# On Linux / WSL
+sha256sum <filename>.zip
+wc -c < <filename>.zip
+```
+
+### Step 3: Create a GitHub Release (web UI)
+
+1. Go to https://github.com/Southco/firmware-manifest
+2. Click **Releases** (right sidebar) → **Draft a new release**
+3. Click **Choose a tag** → type your tag name and click **Create new tag**
+   - Tag format: `<model>-<version>` (e.g., `EA-PCA-018-10-2-revE.10`)
+   - Target branch: `main`
+4. Set the **Release title** (e.g., `EA-PCA-018-10-2 Rev E.10`)
+5. In the description, note what's included (e.g., "App firmware Rev E.10 + DFU Rev A→C")
+6. Drag and drop your `.zip` files into the **Attach binaries** area at the bottom
+7. Click **Publish release**
+
+### Step 3 (alternative): Create a GitHub Release (CLI)
+
+If you have the GitHub CLI (`gh`) installed:
+
+```bash
+gh release create EA-PCA-018-10-2-revE.10 \
+  --repo Southco/firmware-manifest \
+  --title "EA-PCA-018-10-2 Rev E.10" \
+  --notes "App firmware Rev E.10 + DFU Rev A→C" \
+  EA-PCA-018-10-2_APP_revE.10.zip \
+  EA-PCA-018-10-2_DFU_revAtoC.zip
+```
+
+### Step 4: Get the download URLs
+
+After publishing, each uploaded file gets a permanent URL:
+
+```
+https://github.com/Southco/firmware-manifest/releases/download/<tag>/<filename>
+```
+
+For example:
+```
+https://github.com/Southco/firmware-manifest/releases/download/EA-PCA-018-10-2-revE.10/EA-PCA-018-10-2_APP_revE.10.zip
+```
+
+You can verify by clicking the file on the release page — the URL in your browser is the download URL.
+
+### Step 5: Update the device manifest
+
+Edit the device's JSON file in `manifests/` (e.g., `manifests/EA-PCA-018-10-2.json`). Add a new entry under the appropriate `firmware_group` → `available_updates`:
+
+```json
+{
+  "target_version": "Rev E.10",
+  "release_date": "2026-04-13",
+  "app_file": {
+    "filename": "EA-PCA-018-10-2_APP_revE.10.zip",
+    "url": "https://github.com/Southco/firmware-manifest/releases/download/EA-PCA-018-10-2-revE.10/EA-PCA-018-10-2_APP_revE.10.zip",
+    "sha256": "<value from step 2>",
+    "size_bytes": <value from step 2>
+  },
+  "dfu_file": null
+}
+```
+
+### Step 6: Commit and push
+
+```bash
+git add manifests/EA-PCA-018-10-2.json
+git commit -m "Add Rev E.10 firmware for EA-PCA-018-10-2"
+git push
+```
 
 ## Adding a New Device
 
-1. Create a new `manifests/<model>.json` file
-2. Add an entry to `manifests/index.json`
-3. Create GitHub Releases for the device's firmware files
+1. Create a new `manifests/<model>.json` file (use an existing device file as a template)
+2. Add an entry to `manifests/index.json`:
+   ```json
+   {
+     "model_number": "<model>",
+     "display_name": "<model>",
+     "manifest_url": "https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/<model>.json"
+   }
+   ```
+3. Create GitHub Releases for the device's firmware files (follow the steps above)
+4. Commit and push both files
 
 ## License
 

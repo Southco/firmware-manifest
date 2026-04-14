@@ -2,9 +2,19 @@
   "manifest_version": "2.0",
   "devices": [
     {
-      "model_number": "EA-PCA-018-10-2",
-      "display_name": "EA-PCA-018-10-2",
-      "manifest_url": "https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/EA-PCA-018-10-2.json"
+      "model_number": "EA-PCA-018-10",
+      "display_name": "EA-PCA-018-10",
+      "manifest_url": "https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/EA-PCA-018-10.json"
+    },
+    {
+      "model_number":"",
+      "display_name":"N/A",
+      "manifest_url":"https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/na.json"
+    },
+    {
+      "model_number":"EA-PCA-018-15",
+      "display_name":"EA-PCA-018-15",
+      "manifest_url":"https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/EA-PCA-018-15.json"
     }
   ]
 }

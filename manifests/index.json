@@ -3,17 +3,17 @@
   "devices": [
     {
       "model_number": "EA-PCA-018-10",
-      "display_name": "EA-PCA-018-10",
+      "display_name": "Externally Powered Bluetooth Controller",
       "manifest_url": "https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/EA-PCA-018-10.json"
     },
     {
       "model_number":"",
-      "display_name":"N/A",
+      "display_name":"Externally Powered Bluetooth Controller",
       "manifest_url":"https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/na.json"
     },
     {
       "model_number":"EA-PCA-018-15",
-      "display_name":"EA-PCA-018-15",
+      "display_name":"Battery Powered Bluetooth Controller",
       "manifest_url":"https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/EA-PCA-018-15.json"
     }
   ]

@@ -1,3 +1,10 @@
 # Firmware zip files (hosted via GitHub Releases, not committed to repo)
 *.zip
 CLAUDE.md
+
+# Local-only review and tooling files
+REVIEW-*.md
+REVIEW-*.pdf
+DESIGN-*.md
+DESIGN-*.pdf
+md_to_pdf.py

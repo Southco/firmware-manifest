@@ -6,12 +6,15 @@ This repository hosts the firmware update manifest and OTA binaries for Southco 
 
 ```
 manifests/
-  index.json              # Device catalog — entry point for the mobile app
-  EA-PCA-018-10-2.json    # Per-device firmware update manifest
+  index.json              # Production device catalog — entry point for the mobile app
+  index-dev.json          # (Optional) Development/beta device catalog
+  <model>.json            # Per-device production firmware manifest
+  <model>-dev.json        # (Optional) Per-device development/beta firmware manifest
 ```
 
-- **`index.json`** — Lists all supported devices with links to their individual manifests.
+- **`index.json`** — Lists all supported devices with links to their individual manifests. The mobile app fetches this first.
 - **Per-device manifest** — Contains firmware groups, version compatibility rules, and download URLs for each device.
+- **Development/beta files** — `index-dev.json` and `<model>-dev.json` follow the same schema as their production counterparts. They allow shipping pre-release firmware to beta testers without exposing it to production users. See [Development / Beta Channel](#development--beta-channel) below.
 
 ## Firmware Hosting
 
@@ -120,6 +123,22 @@ git push
    ```
 3. Create GitHub Releases for the device's firmware files (follow the steps above)
 4. Commit and push both files
+
+## Development / Beta Channel
+
+Two parallel sets of manifests may exist in `manifests/`:
+
+| Channel | Index file | Per-device file |
+|---------|------------|-----------------|
+| Production | `index.json` | `<model>.json` |
+| Development / Beta | `index-dev.json` | `<model>-dev.json` |
+
+The two sets use the **same schema**; only the file names differ. The mobile app selects the channel by choosing which index URL to fetch — production builds resolve `index.json`, beta builds resolve `index-dev.json`. A device on a production-only build will never see any dev URLs.
+
+**Conventions for dev firmware:**
+- Use a distinct GitHub Release tag suffix to keep dev assets separate (e.g., `EA-PCA-018-10-revE.13-beta`). Do not mix dev and production assets in the same release.
+- Dev manifests should never reference production release assets, and vice versa.
+- When promoting a dev firmware to production, copy the entry from `<model>-dev.json` into `<model>.json` and re-publish the assets under a production tag.
 
 ## License
 

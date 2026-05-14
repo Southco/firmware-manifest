@@ -4,11 +4,11 @@
   "firmware_groups": [
     {
       "valid_current_versions": ["Rev C"],
-      "available_updates": null
+      "available_updates": []
     },
     {
       "valid_current_versions": ["Rev D", "Boot Rev B"],
-      "available_updates": null
+      "available_updates": []
     }
   ]
 }

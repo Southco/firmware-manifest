@@ -68,13 +68,13 @@
           "release_date": "2026-05-14",
           "app_file": {
               "filename": "OTA_EA-PCA-018-10-2_APP_revF.zip",
-              "url": "https://github.com/Southco/firmware-manifest/releases/download/EA-PCA-018-10-2_revE.12_fwd/OTA_EA-PCA-018-10-2_APP_revF.zip",
+              "url": "https://github.com/Southco/firmware-manifest/releases/download/EA-PCA-018-10-2_revF/OTA_EA-PCA-018-10-2_APP_revF.zip",
               "sha256": "f2a6c54686eb00084cf46bb138c3a35b3a6bbc42b023dd179abf7b5bb8ce7ddc",
               "size_bytes": 95215 
           },
           "dfu_file": {
              "filename": "OTA_EA-PCA-018-10-2_DFU_revC.2toD.zip",
-              "url": "https://github.com/Southco/firmware-manifest/releases/download/EA-PCA-018-10-2_revE.12_fwd/OTA_EA-PCA-018-10-2_DFU_revC.2toD.zip",
+              "url": "https://github.com/Southco/firmware-manifest/releases/download/EA-PCA-018-10-2_revF/OTA_EA-PCA-018-10-2_DFU_revC.2toD.zip",
               "sha256": "faa53a663f8bd6d9e7737d0fba513b6f21277702d9d2ed10453c5250e04898ff",
               "size_bytes": 25306
           }

@@ -1,0 +1,14 @@
+{
+  "model_number": "EA-PCA-018-15",
+  "manifest_version": "2.0",
+  "firmware_groups": [
+    {
+      "valid_current_versions": ["Rev C"],
+      "available_updates": []
+    },
+    {
+      "valid_current_versions": ["Rev D", "Boot Rev B"],
+      "available_updates": []
+    }
+  ]
+}

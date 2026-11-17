@@ -9,7 +9,7 @@
           "destined_version": "Rev B",
           "release_date": "2026-11-17",
           "app_file": {
-            "filename": "OTA_EA-PCA-045-02_APP_revB.zip",
+            "filename": "OTA_EA-PCA-045-02-2_APP_revB.zip",
             "url": "https://github.com/Southco/firmware-manifest/releases/download/EA-PCA-045-02-2_revB/OTA_EA-PCA-045-02-2_APP_revB.zip",
             "sha256": "1ead20e430ddc42d562f4b61cbafd9309df8bd54d8f1061e5acd4f994184bba8",
             "size_bytes": 99211

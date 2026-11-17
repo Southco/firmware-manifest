@@ -15,6 +15,11 @@
       "model_number":"EA-PCA-018-15",
       "display_name":"Battery Powered Bluetooth Controller",
       "manifest_url":"https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/EA-PCA-018-15-dev.json"
+    },
+    {
+      "model_number":"EA-PCA-045-02",
+      "display_name":"Self Contained Bluetooth Cam Lock",
+      "manifest_url":"https://raw.githubusercontent.com/Southco/firmware-manifest/main/manifests/EA-PCA-045-02-dev.json"
     }
   ]
 }

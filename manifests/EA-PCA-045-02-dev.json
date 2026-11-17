@@ -3,7 +3,7 @@
   "manifest_version": "2.0",
   "firmware_groups": [
     {
-      "valid_current_versions": ["Rev A", "Rev A.1", "Rev A.2", "Rev B", "Boot Rev B", ],
+      "valid_current_versions": ["Rev A", "Rev A.1", "Rev A.2", "Rev B", "Boot Rev B"],
       "available_updates": [
         {
           "destined_version": "Rev B",
